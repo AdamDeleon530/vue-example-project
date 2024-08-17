@@ -11,6 +11,7 @@
 <script>
 import AppNav from "./AppNav.vue";
 import AppFooter from "./AppFooter.vue";
+import { defineComponent } from "vue";
 export default defineComponent({
   name: "app",
   components: { AppNav, AppFooter },
