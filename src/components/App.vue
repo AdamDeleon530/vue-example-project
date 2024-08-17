@@ -6,20 +6,45 @@
     </div>
     <app-footer></app-footer>
   </div>
-
 </template>
 
 <script>
-import AppNav from './AppNav.vue'
-import AppFooter from './AppFooter.vue'
+import AppNav from "./AppNav.vue";
+import AppFooter from "./AppFooter.vue";
 export default {
-  name: 'app',
+  name: "app",
   components: { AppNav, AppFooter },
-  data () {
+  data() {
     return {
-    }
-  }
-}
+      message: "Hello, World!",
+    };
+  },
+  created() {
+    // Deprecated: Vue.extend usage
+    const MyComponent = Vue.extend({
+      template: "<div>{{ message }}</div>",
+      data() {
+        return {
+          message: "This is a deprecated example",
+        };
+      },
+    });
+  },
+  mounted() {
+    // Deprecated: Filters (removed in Vue 3)
+    this.$options.filters = {
+      uppercase(value) {
+        if (!value) return "";
+        return value.toString().toUpperCase();
+      },
+    };
+  },
+  methods: {
+    doSomething() {
+      console.log(this.$options.filters.uppercase(this.message));
+    },
+  },
+};
 </script>
 
 <style lang="scss">
