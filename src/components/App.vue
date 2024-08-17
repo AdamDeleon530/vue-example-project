@@ -11,7 +11,7 @@
 <script>
 import AppNav from "./AppNav.vue";
 import AppFooter from "./AppFooter.vue";
-export default {
+export default defineComponent({
   name: "app",
   components: { AppNav, AppFooter },
   data() {
@@ -44,7 +44,7 @@ export default {
       console.log(this.$options.filters.uppercase(this.message));
     },
   },
-};
+});
 </script>
 
 <style lang="scss">
